@@ -3,11 +3,11 @@
 
 using namespace std;
 
-extern "C" Plugin * createPlugin();
-extern "C" void destroyPlugin(Plugin *);
 
 class Test:public Plugin
 {
     public:
+        Plugin * createPlugin();
+        void destroyPlugin(Plugin *);
         void Hello();
 };

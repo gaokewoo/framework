@@ -1,11 +1,11 @@
 #include "test.hh"
 
-extern "C" Plugin * createPlugin()
+Plugin * Test::createPlugin()
 {
     return new Test();
 }
 
-extern "C" void destroyPlugin(Plugin *p)
+void Test::destroyPlugin(Plugin *p)
 {
     delete p;
 }
