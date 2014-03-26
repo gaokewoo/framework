@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../tool/tinyxml2/tinyxml2.h"
+#include "tinyxml2.h"
 
 #ifndef __PLUGINPARSER__
 #define __PLUGINPARSER__

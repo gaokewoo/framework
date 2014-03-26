@@ -1,4 +1,4 @@
-include ../../global.mk
+include ../global.mk
 
 SRCS = $(wildcard *.cpp)
 BUILD = $(patsubst %.cpp, %.o, $(SRCS))
@@ -10,11 +10,11 @@ OBJS=$(BUILD)
 
 $(LIB_NAME):$(OBJS)
 	$(CC) -shared -o $@ $(OBJS)
-	@if [ ! -d ../../lib/ ];then mkdir ../../lib/;fi
-	mv -f $@ ../../lib/
+	@if [ ! -d ../lib/ ];then mkdir ../lib/;fi
+	mv -f $@ ../lib/
 	@echo "### $@ loaded ###\n"
 
-.cc.o:
+.cpp.o:
 	$(CC) $(CC_FLAGS) -c $<
 
 install:

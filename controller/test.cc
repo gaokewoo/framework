@@ -31,7 +31,7 @@ int main()
  
     string plugin_name = "Test";
     char plugin_name_length[20];
-    snprintf(plugin_name_length,sizeof(plugin_name_length),"%d",plugin_name.length());
+    snprintf(plugin_name_length,sizeof(plugin_name_length),"%ld",plugin_name.length());
 
     string create_func_name = CREATE_PLUGIN_FUNC;
     create_func_name.replace(create_func_name.find_first_of(CLASS_LENGTH,0),CLASS_LENGTH.length(),plugin_name_length);

@@ -1,3 +1,4 @@
+export SEAL_DEV_HOME=~/dev/framework/
 export SEAL_HOME=/opt-seal/
 export PATH=/usr/local/bin:/usr/sbin:$PATH
 export PATH=$SEAL_HOME/thrift/bin/:$PATH

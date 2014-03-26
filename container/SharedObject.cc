@@ -33,7 +33,7 @@ Plugin * SharedObject::createPlugin()
     dlerror();
  
     char pluginNameLength[20];
-    snprintf(pluginNameLength,sizeof(pluginNameLength),"%d",m_pluginName.length());
+    snprintf(pluginNameLength,sizeof(pluginNameLength),"%ld",m_pluginName.length());
 
     string create_func_name = CREATE_PLUGIN_FUNC;
     create_func_name.replace(create_func_name.find_first_of(CLASS_LENGTH,0),CLASS_LENGTH.length(),pluginNameLength);
