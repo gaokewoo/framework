@@ -1,4 +1,4 @@
-#include "SharedObject.hh"
+#include "SharedObject.h"
 
 const string SharedObject::CLASS_LENGTH="%classlength%";
 const string SharedObject::CLASS_NAME="%classname%";

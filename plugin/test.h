@@ -1,5 +1,5 @@
 #include <iostream>
-#include "plugin.hh"
+#include "plugin.h"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "test.hh"
+#include "test.h"
 
 Test::Test()
 {

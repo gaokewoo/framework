@@ -1,4 +1,4 @@
-#include "PluginParser.hh"
+#include "PluginParser.h"
 
 PluginParser::PluginParser(string xml_file)
 {

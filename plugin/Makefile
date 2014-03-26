@@ -1,7 +1,7 @@
 include ../global.mk
 
-SRCS = $(wildcard *.cc)
-BUILD = $(patsubst %.cc, %.o, $(SRCS))
+SRCS = $(wildcard *.cpp)
+BUILD = $(patsubst %.cpp, %.o, $(SRCS))
 
 LIB_NAME=libsealplugin.so
 
@@ -14,7 +14,7 @@ $(LIB_NAME):$(OBJS)
 	mv -f $@ ../lib/
 	@echo "### $@ loaded ###\n"
 
-.cc.o:
+.cpp.o:
 	$(CC) $(CC_FLAGS) -c $<
 
 install:

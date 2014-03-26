@@ -1,9 +1,9 @@
 include ../global.mk
 
-SRCS = $(wildcard *.cc)
-BUILD = $(patsubst %.cc, %, $(SRCS))
+SRCS = $(wildcard *.cpp)
+BUILD = $(patsubst %.cpp, %, $(SRCS))
 
-.cc:
+.cpp:
 	$(CC) $(CC_FLAGS) -o $@ $< $(CC_INCLDIR) $(LIBS)
 	@if [ ! -d ../bin/ ];then mkdir ../bin/;fi
 	cp $@ ../bin/

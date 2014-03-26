@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <memory>
-#include "../plugin/plugin.hh"
+#include "../plugin/plugin.h"
 
 using namespace std;
 
