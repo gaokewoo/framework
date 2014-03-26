@@ -6,7 +6,12 @@ SUBDIRS=tinyxml2 container plugin controller
 
 #define lib path
 SEAL_LIB_PATH=$(SEAL_DEV_HOME)/lib/
-SEAL_LIBS=$(SEAL_LIB_PATH)/ -ltinyxml2
+SEAL_LIBS=$(SEAL_LIB_PATH)/ -ltinyxml2 -lsealcontainer -lsealplugin
+
+#define plugin path
+SEAL_PLUGIN_INCLUDE=$(SEAL_DEV_HOME)/plugin/
+SEAL_CONTAINER_INCLUDE=$(SEAL_DEV_HOME)/container/
+SEAL_CONTROLLER_INCLUDE=$(SEAL_DEV_HOME)/controller/
 
 #tinyxml2
 TINYXML2_INCLUDE=$(SEAL_DEV_HOME)/tinyxml2/
@@ -30,6 +35,9 @@ CC_INCLDIR=-I. \
 		   -I$(GMOCK_INCLUDE)/ \
 		   -I$(GTEST_INCLUDE)/ \
 		   -I$(TINYXML2_INCLUDE) \
+		   -I$(SEAL_PLUGIN_INCLUDE) \
+		   -I$(SEAL_CONTAINER_INCLUDE) \
+		   -I$(SEAL_CONTROLLER_INCLUDE) \
 		   -I/usr/include
 
 LIBS= -L$(SEAL_LIBS) -L$(THRIFT_LIBS) -L$(ZMQ_LIBS) -ldl -lpthread

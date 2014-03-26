@@ -3,7 +3,7 @@ include ../global.mk
 SRCS = $(wildcard *.cpp)
 BUILD = $(patsubst %.cpp, %.o, $(SRCS))
 
-LIB_NAME=libsealcontainer.so
+LIB_NAME=libsealtest.so
 
 all: $(LIB_NAME)
 OBJS=$(BUILD)

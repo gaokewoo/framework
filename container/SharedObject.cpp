@@ -3,7 +3,7 @@
 const string SharedObject::CLASS_LENGTH="%classlength%";
 const string SharedObject::CLASS_NAME="%classname%";
 const string SharedObject::CREATE_PLUGIN_FUNC="_ZN%classlength%%classname%12createPluginEv";
-const string SharedObject::DESTROY_PLUGIN_FUNC="_ZN%classlength%%classname%13destroyPluginEP6Plugin";
+const string SharedObject::DESTROY_PLUGIN_FUNC="_ZN%classlength%%classname%13destroyPluginEP8PluginIf";
 
 SharedObject::SharedObject(string pluginName,string soName):m_pluginName(pluginName),m_soName(soName)
 {
@@ -26,7 +26,7 @@ SharedObject::~SharedObject()
     handler = NULL;
 }
 
-Plugin * SharedObject::createPlugin()
+PluginIf * SharedObject::createPlugin()
 {
 
     // reset errors

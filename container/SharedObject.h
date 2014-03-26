@@ -3,23 +3,23 @@
 #include <cstdlib>
 #include <dlfcn.h>
 #include <memory>
-#include "../plugin/plugin.h"
+#include "Plugin.h"
 
 using namespace std;
 
 #ifndef __SHAREDOBJECT__
 #define __SHAREDOBJECT__
 
-typedef Plugin* CreateType(); 
-typedef void DestroyType(Plugin*); 
+typedef PluginIf* CreateType(); 
+typedef void DestroyType(PluginIf*); 
 
 class SharedObject
 {
     public:
         SharedObject(string pluginName,string soName);
         ~SharedObject();
-        Plugin * createPlugin();
-        void destroyPlugin(Plugin * p);
+        PluginIf * createPlugin();
+        void destroyPlugin(PluginIf * p);
 
     private:
         string m_pluginName;
@@ -27,7 +27,7 @@ class SharedObject
         void * handler;
         CreateType * createRef;
         DestroyType * destroyRef;
-        Plugin * plugin;
+        PluginIf * plugin;
         static const string CLASS_LENGTH;
         static const string CLASS_NAME;
         static const string CREATE_PLUGIN_FUNC;
