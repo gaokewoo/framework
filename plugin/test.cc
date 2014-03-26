@@ -1,5 +1,13 @@
 #include "test.hh"
 
+Test::Test()
+{
+}
+
+Test::~Test()
+{
+}
+
 Plugin * Test::createPlugin()
 {
     return new Test();
