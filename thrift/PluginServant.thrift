@@ -1,4 +1,4 @@
-service Plugin
+service PluginServant
 {
     void initialize(1:i32 level,2:string configuration);
     void prepareForStart();
@@ -8,5 +8,5 @@ service Plugin
     void stop();
     void prepareForUnload();
     void destroy(1:i32 level);
-    int getState();
+    i32 getState();
 }

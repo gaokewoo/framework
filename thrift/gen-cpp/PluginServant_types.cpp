@@ -4,14 +4,10 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-#include "plugin_constants.h"
+#include "PluginServant_types.h"
 
+#include <algorithm>
 
-
-const pluginConstants g_plugin_constants;
-
-pluginConstants::pluginConstants() {
-}
 
 
 

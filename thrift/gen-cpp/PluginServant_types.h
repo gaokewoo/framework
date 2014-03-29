@@ -4,8 +4,8 @@
  * DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
  *  @generated
  */
-#ifndef plugin_TYPES_H
-#define plugin_TYPES_H
+#ifndef PluginServant_TYPES_H
+#define PluginServant_TYPES_H
 
 #include <thrift/Thrift.h>
 #include <thrift/TApplicationException.h>
