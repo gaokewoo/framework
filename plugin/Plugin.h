@@ -1,28 +1,41 @@
-#include <iostream>
-
-using namespace std;
-
 #ifndef __PLUGIN__
 #define __PLUGIN__
 
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <memory>
+#include "PluginBridge.h"
+
+using namespace std;
+
+
+class PluginBridge;
 class Plugin
 {
     public:
-        void initialize(int level,string configuration) {}
+        Plugin();
 
-        void prepareForStart() {}
+        //virtual ~Plugin();
 
-        void start() {}
+        virtual void initialize(int level,string configuration)=0;
 
-        void active() {}
+        virtual void prepareForStart()=0;
 
-        void passive() {}
+        virtual void start()=0;
 
-        void stop() {}
+        virtual void active()=0;
 
-        void prepareForUnload() {}
+        virtual void passive()=0;
 
-        void destroy(int level) {}
+        virtual void stop()=0;
+
+        virtual void prepareForUnload()=0;
+
+        virtual void destroy(int level)=0;
+
+    private:
+        auto_ptr<PluginBridge> mpPluginBridge;
 
 };
 

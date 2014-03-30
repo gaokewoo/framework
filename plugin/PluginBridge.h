@@ -1,12 +1,13 @@
+#ifndef __PLUGINBRIDGE__
+#define __PLUGINBRIDGE__
+
 #include <iostream>
 #include <memory>
 #include "Plugin.h"
 
 using namespace std;
 
-#ifndef __PLUGINBRIDGE__
-#define __PLUGINBRIDGE__
-
+class Plugin;
 class PluginBridge
 {
     public:

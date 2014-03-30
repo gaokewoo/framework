@@ -1,17 +1,20 @@
-CC_FLAGS= -g3 -Wall -fpic
+CC_FLAGS= -g3 -Wall -fpic -Wl,-z -Wl,defs
 CC=g++
 AR_CMD=ar -rv
 
-SUBDIRS=tinyxml2 container plugin controller 
+SUBDIRS=tinyxml2 thrift sharedobject container plugin test controller 
 
 #define lib path
 SEAL_LIB_PATH=$(SEAL_DEV_HOME)/lib/
-SEAL_LIBS=$(SEAL_LIB_PATH)/ -ltinyxml2 -lsealcontainer -lsealplugin
+SEAL_LIBS=$(SEAL_LIB_PATH) -ltinyxml2 -lsealthrift -lsealcontainer -lsealsharedobject -lsealplugin -lsealtest
 
 #define plugin path
+SEAL_SHAREDOBJECT_INCLUDE=$(SEAL_DEV_HOME)/sharedobject/
 SEAL_PLUGIN_INCLUDE=$(SEAL_DEV_HOME)/plugin/
 SEAL_CONTAINER_INCLUDE=$(SEAL_DEV_HOME)/container/
 SEAL_CONTROLLER_INCLUDE=$(SEAL_DEV_HOME)/controller/
+SEAL_THRIFT_INCLUDE=$(SEAL_DEV_HOME)/thrift/
+SEAL_TEST_INCLUDE=$(SEAL_DEV_HOME)/test/
 
 #tinyxml2
 TINYXML2_INCLUDE=$(SEAL_DEV_HOME)/tinyxml2/
@@ -35,9 +38,12 @@ CC_INCLDIR=-I. \
 		   -I$(GMOCK_INCLUDE)/ \
 		   -I$(GTEST_INCLUDE)/ \
 		   -I$(TINYXML2_INCLUDE) \
+		   -I$(SEAL_SHAREDOBJECT_INCLUDE) \
 		   -I$(SEAL_PLUGIN_INCLUDE) \
 		   -I$(SEAL_CONTAINER_INCLUDE) \
 		   -I$(SEAL_CONTROLLER_INCLUDE) \
+		   -I$(SEAL_THRIFT_INCLUDE) \
+		   -I$(SEAL_TEST_INCLUDE) \
 		   -I/usr/include
 
 LIBS= -L$(SEAL_LIBS) -L$(THRIFT_LIBS) -L$(ZMQ_LIBS) -ldl -lpthread

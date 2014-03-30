@@ -5,13 +5,15 @@
 #include <memory>
 #include "SharedObject.h"
 #include "Plugin.h"
+#include "PluginHandler.h"
+#include "PluginContainer.h"
 
 using namespace std;
 
 void testPlugin()
 {
-    SharedObject object("PluginHandler","../lib/libsealtest.so");
-    PluginIf *plugin = object.createPlugin();
+    PluginContainer pluginContainer;
+    Plugin *plugin = pluginContainer.createPlugin("PluginHandler");
     plugin->start();
 }
 
