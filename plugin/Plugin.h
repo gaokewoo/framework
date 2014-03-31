@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <memory>
 #include "PluginBridge.h"
+#include "RequestQueue.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ class Plugin
     public:
         Plugin();
 
-        //virtual ~Plugin();
+        virtual ~Plugin();
 
         virtual void initialize(int level,string configuration)=0;
 
@@ -36,6 +37,7 @@ class Plugin
 
     private:
         auto_ptr<PluginBridge> mpPluginBridge;
+        auto_ptr<RequestQueue> mpRequestQueue;
 
 };
 

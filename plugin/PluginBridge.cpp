@@ -11,7 +11,7 @@ PluginBridge::~PluginBridge()
 
 }
 
-void PluginBridge::initialize(int level,string configuration)
+void PluginBridge::initialize(const int level,const string & configuration)
 {
     mpPlugin->initialize(level,configuration);
 }
@@ -46,7 +46,7 @@ void PluginBridge::prepareForUnload()
     mpPlugin->prepareForUnload();
 }
 
-void PluginBridge::destroy(int level)
+void PluginBridge::destroy(const int level)
 {
     mpPlugin->destroy(level);
 }
