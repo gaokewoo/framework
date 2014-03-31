@@ -8,7 +8,7 @@ const string PluginContainer::DESTROY_PLUGIN_FUNC="_ZN%classlength%%classname%13
 PluginContainer::PluginContainer()
 {
     mpPlugin = NULL;
-    mpSharedObj = new SharedObject("../lib/libsealtest.so");
+    mpSharedObj = new SharedObject("libsealtest.so");
 }
 
 PluginContainer::~PluginContainer()
