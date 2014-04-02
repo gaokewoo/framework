@@ -27,11 +27,13 @@ class RequestQueue
         ~RequestQueue();
 
         void addObject(PluginServantIf *p);
+        static void* run(void *);
         void start();
         void stop();
 
     private:
-        list<PluginServantIf*> mlistPluginServant;
+        static list<PluginServantIf*> mlistPluginServant;
+        static PluginServantIf *mpPlugin; //a tmp member variable, it will be deleted in future
 
 };
 

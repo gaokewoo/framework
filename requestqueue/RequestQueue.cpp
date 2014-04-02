@@ -1,4 +1,8 @@
 #include "RequestQueue.h"
+#include "Thread.h"
+
+PluginServantIf* RequestQueue::mpPlugin = NULL;
+list<PluginServantIf*> RequestQueue::mlistPluginServant;
 
 RequestQueue::RequestQueue()
 {
@@ -12,9 +16,13 @@ RequestQueue::~RequestQueue()
 void RequestQueue::addObject(PluginServantIf *p)
 {
     mlistPluginServant.push_back(p);
+    mpPlugin = p;
+}
 
+void * RequestQueue::run(void *)
+{
     int port = 9090;                                                                                                                   
-    shared_ptr<PluginServantIf> handler(p);
+    shared_ptr<PluginServantIf> handler(mpPlugin);
     shared_ptr<TProcessor> processor(new PluginServantProcessor(handler));
     shared_ptr<TServerTransport> serverTransport(new TServerSocket(port));
     shared_ptr<TTransportFactory> transportFactory(new TBufferedTransportFactory());
@@ -26,7 +34,16 @@ void RequestQueue::addObject(PluginServantIf *p)
 
 void RequestQueue::start()
 {
+    /*list<PluginServantIf*>::const_iterator iter;
+    for(iter = mlistPluginServant.begin();iter != mlistPluginServant.end();++iter)
+    {
+        cout<<*iter;
+    }*/
 
+    Thread myfunc;
+    myfunc.makeThreadFunc(&run);
+    myfunc.start();
+    myfunc.join();
 }
 
 void RequestQueue::stop()

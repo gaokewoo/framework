@@ -7,3 +7,6 @@ export LD_LIBRARY_PATH=$SEAL_HOME/thrift/lib:.:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$SEAL_HOME/zeromq/lib:.:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$SEAL_HOME/glog/lib:.:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=~/dev/framework/lib:.:$LD_LIBRARY_PATH
+
+export PYTHONPATH=/usr/lib/python2.7/site-packages
+

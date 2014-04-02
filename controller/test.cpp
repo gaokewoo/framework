@@ -7,14 +7,23 @@
 #include "Plugin.h"
 #include "PluginHandler.h"
 #include "PluginContainer.h"
+#include "PluginBridge.h"
+#include "RequestQueue.h"
 
 using namespace std;
 
 void testPlugin()
 {
+    auto_ptr<PluginBridge> mpPluginBridge;
+    auto_ptr<RequestQueue> mpRequestQueue;
+
     PluginContainer pluginContainer;
     Plugin *plugin = pluginContainer.createPlugin("PluginHandler");
-    plugin->start();
+    mpRequestQueue.reset(new RequestQueue);
+    mpPluginBridge.reset(new PluginBridge(plugin));
+
+    mpRequestQueue->addObject(mpPluginBridge.get());
+    mpRequestQueue->start();
 }
 
 int main()

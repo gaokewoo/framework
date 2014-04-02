@@ -9,7 +9,7 @@ all: $(LIB_NAME)
 OBJS=$(BUILD)
 
 $(LIB_NAME):$(OBJS)
-	$(CC) -shared -o $@ $(OBJS)
+	$(CC) -shared -o $@ $(OBJS) ../lib/libsealthrift.so -L$(THRIFT_LIBS)
 	@if [ ! -d ../lib/ ];then mkdir ../lib/;fi
 	mv -f $@ ../lib/
 	@echo "### $@ loaded ###\n"

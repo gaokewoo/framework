@@ -2,15 +2,16 @@ CC_FLAGS= -g3 -Wall -fpic
 CC=g++
 AR_CMD=ar -rv
 
-SUBDIRS=tinyxml2 thrift sharedobject container plugin requestqueue test controller 
+SUBDIRS=tinyxml2 thrift sharedobject requestqueue thread container plugin test controller 
 
 #define lib path
 SEAL_LIB_PATH=$(SEAL_DEV_HOME)/lib/
-SEAL_LIBS=$(SEAL_LIB_PATH) -ltinyxml2 -lsealthrift -lsealcontainer -lsealsharedobject -lsealrequestqueue -lsealplugin -lsealtest
+SEAL_LIBS=$(SEAL_LIB_PATH) -ltinyxml2 -lsealthrift -lsealcontainer -lsealsharedobject -lsealrequestqueue -lsealthread -lsealplugin -lsealtest
 
 #define plugin path
 SEAL_SHAREDOBJECT_INCLUDE=$(SEAL_DEV_HOME)/sharedobject/
 SEAL_REQUESTQUEUE_INCLUDE=$(SEAL_DEV_HOME)/requestqueue/
+SEAL_THREAD_INCLUDE=$(SEAL_DEV_HOME)/thread/
 SEAL_PLUGIN_INCLUDE=$(SEAL_DEV_HOME)/plugin/
 SEAL_CONTAINER_INCLUDE=$(SEAL_DEV_HOME)/container/
 SEAL_CONTROLLER_INCLUDE=$(SEAL_DEV_HOME)/controller/
@@ -41,6 +42,7 @@ CC_INCLDIR=-I. \
 		   -I$(TINYXML2_INCLUDE) \
 		   -I$(SEAL_SHAREDOBJECT_INCLUDE) \
 		   -I$(SEAL_REQUESTQUEUE_INCLUDE) \
+		   -I$(SEAL_THREAD_INCLUDE) \
 		   -I$(SEAL_PLUGIN_INCLUDE) \
 		   -I$(SEAL_CONTAINER_INCLUDE) \
 		   -I$(SEAL_CONTROLLER_INCLUDE) \
