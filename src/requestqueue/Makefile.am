@@ -8,6 +8,8 @@ INCLUDES=-I../thrift \
 
 libsealrequestqueue_la_SOURCES=RequestQueue.cpp  RequestQueue.h
 
-libsealrequestqueue_la_LIBADD=-lthrift
+libsealrequestqueue_la_LIBADD=-lthrift -lsealthread -lsealthrift
 
-libsealrequestqueue_la_LDFLAGS=-L${SEAL_HOME}/thrift/lib
+libsealrequestqueue_la_LDFLAGS=-L${SEAL_HOME}/thrift/lib \
+                               -L$(top_srcdir)/src/thrift \
+                               -L$(top_srcdir)/src/thread

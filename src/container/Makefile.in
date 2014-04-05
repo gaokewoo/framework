@@ -73,9 +73,12 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libsealcontainer_la_LIBADD =
+libsealcontainer_la_DEPENDENCIES =
 am_libsealcontainer_la_OBJECTS = PluginContainer.lo
 libsealcontainer_la_OBJECTS = $(am_libsealcontainer_la_OBJECTS)
+libsealcontainer_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+	$(CXXFLAGS) $(libsealcontainer_la_LDFLAGS) $(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -230,6 +233,8 @@ INCLUDES = -I../thrift \
          -I${SEAL_HOME}/thrift/include
 
 libsealcontainer_la_SOURCES = PluginContainer.cpp  PluginContainer.h
+libsealcontainer_la_LIBADD = -lsealsharedobject
+libsealcontainer_la_LDFLAGS = -L$(top_srcdir)/src/sharedobject 
 all: all-am
 
 .SUFFIXES:
@@ -296,7 +301,7 @@ clean-libLTLIBRARIES:
 	  rm -f "$${dir}/so_locations"; \
 	done
 libsealcontainer.la: $(libsealcontainer_la_OBJECTS) $(libsealcontainer_la_DEPENDENCIES) $(EXTRA_libsealcontainer_la_DEPENDENCIES) 
-	$(CXXLINK) -rpath $(libdir) $(libsealcontainer_la_OBJECTS) $(libsealcontainer_la_LIBADD) $(LIBS)
+	$(libsealcontainer_la_LINK) -rpath $(libdir) $(libsealcontainer_la_OBJECTS) $(libsealcontainer_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
