@@ -34,7 +34,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/container
+subdir = src/test
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -73,9 +73,9 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libsealcontainer_la_LIBADD =
-am_libsealcontainer_la_OBJECTS = PluginContainer.lo
-libsealcontainer_la_OBJECTS = $(am_libsealcontainer_la_OBJECTS)
+libsealtest_la_LIBADD =
+am_libsealtest_la_OBJECTS = PluginHandler.lo
+libsealtest_la_OBJECTS = $(am_libsealtest_la_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -98,8 +98,8 @@ CCLD = $(CC)
 LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-SOURCES = $(libsealcontainer_la_SOURCES)
-DIST_SOURCES = $(libsealcontainer_la_SOURCES)
+SOURCES = $(libsealtest_la_SOURCES)
+DIST_SOURCES = $(libsealtest_la_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
@@ -222,14 +222,13 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign
-lib_LTLIBRARIES = libsealcontainer.la
+lib_LTLIBRARIES = libsealtest.la
 INCLUDES = -I../thrift \
          -I../requestqueue \
-         -I../sharedobject \
          -I../plugin \
          -I${SEAL_HOME}/thrift/include
 
-libsealcontainer_la_SOURCES = PluginContainer.cpp  PluginContainer.h
+libsealtest_la_SOURCES = PluginHandler.cpp  PluginHandler.h
 all: all-am
 
 .SUFFIXES:
@@ -243,9 +242,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/container/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/test/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/container/Makefile
+	  $(AUTOMAKE) --foreign src/test/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -295,8 +294,8 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libsealcontainer.la: $(libsealcontainer_la_OBJECTS) $(libsealcontainer_la_DEPENDENCIES) $(EXTRA_libsealcontainer_la_DEPENDENCIES) 
-	$(CXXLINK) -rpath $(libdir) $(libsealcontainer_la_OBJECTS) $(libsealcontainer_la_LIBADD) $(LIBS)
+libsealtest.la: $(libsealtest_la_OBJECTS) $(libsealtest_la_DEPENDENCIES) $(EXTRA_libsealtest_la_DEPENDENCIES) 
+	$(CXXLINK) -rpath $(libdir) $(libsealtest_la_OBJECTS) $(libsealtest_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -304,7 +303,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PluginContainer.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/PluginHandler.Plo@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

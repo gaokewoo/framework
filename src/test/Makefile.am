@@ -1,11 +1,10 @@
 AUTOMAKE_OPTIONS=foreign
 
-lib_LTLIBRARIES=libsealcontainer.la
+lib_LTLIBRARIES=libsealtest.la
 
 INCLUDES=-I../thrift \
          -I../requestqueue \
-         -I../sharedobject \
          -I../plugin \
          -I${SEAL_HOME}/thrift/include
 
-libsealcontainer_la_SOURCES=PluginContainer.cpp  PluginContainer.h
+libsealtest_la_SOURCES=PluginHandler.cpp  PluginHandler.h

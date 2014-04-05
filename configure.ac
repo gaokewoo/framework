@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.68])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([src/sharedobject/SharedObject.cpp])
+AC_CONFIG_SRCDIR([config.h.in])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE([seal], 0.01, gaokewoo@126.com)
@@ -11,7 +11,14 @@ AC_PROG_LIBTOOL
 
 # Checks for programs.
 AC_PROG_CXX
+AC_PROG_AWK
 AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PROG_MAKE_SET
+AC_PROG_RANLIB
+
 
 # Checks for libraries.
 # FIXME: Replace `main' with a function in `-lsealcontainer':
@@ -22,6 +29,8 @@ AC_CHECK_LIB([sealplugin], [main])
 AC_CHECK_LIB([sealrequestqueue], [main])
 # FIXME: Replace `main' with a function in `-lsealsharedobject':
 AC_CHECK_LIB([sealsharedobject], [main])
+# FIXME: Replace `main' with a function in `-lsealtest':
+AC_CHECK_LIB([sealtest], [main])
 # FIXME: Replace `main' with a function in `-lsealthread':
 AC_CHECK_LIB([sealthread], [main])
 # FIXME: Replace `main' with a function in `-lsealthrift':
@@ -50,6 +59,7 @@ AC_CONFIG_FILES([Makefile
                  src/plugin/Makefile
                  src/requestqueue/Makefile
                  src/sharedobject/Makefile
+                 src/test/Makefile
                  src/thread/Makefile
                  src/thrift/Makefile
                  src/tinyxml2/Makefile])

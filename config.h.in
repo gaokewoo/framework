@@ -20,6 +20,9 @@
    (-lsealsharedobject). */
 #undef HAVE_LIBSEALSHAREDOBJECT
 
+/* Define to 1 if you have the `sealtest' library (-lsealtest). */
+#undef HAVE_LIBSEALTEST
+
 /* Define to 1 if you have the `sealthread' library (-lsealthread). */
 #undef HAVE_LIBSEALTHREAD
 

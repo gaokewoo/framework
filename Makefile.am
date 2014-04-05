@@ -9,4 +9,5 @@ SUBDIRS = src/tinyxml2 \
           src/sharedobject \
           src/plugin \
           src/container \
+          src/test \
           src/controller

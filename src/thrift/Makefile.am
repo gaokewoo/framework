@@ -2,6 +2,8 @@ AUTOMAKE_OPTIONS=foreign
 
 lib_LTLIBRARIES=libsealthrift.la
 
+INCLUDES=-I${SEAL_HOME}/thrift/include
+
 libsealthrift_la_SOURCES= \
                           gen-cpp/PluginServant.cpp \
                           gen-cpp/PluginServant.h \
