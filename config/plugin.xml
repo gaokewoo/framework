@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugins>
     <plugin>
-        <pluginName>Test</pluginName>
-        <library>libsealplugin.so</library>
+        <pluginName>PluginHandler</pluginName>
+        <library>libsealtest.so</library>
     </plugin>
 </plugins>

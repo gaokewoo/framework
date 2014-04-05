@@ -37,6 +37,8 @@ AC_CHECK_LIB([sealthread], [main])
 AC_CHECK_LIB([sealthrift], [main])
 # FIXME: Replace `main' with a function in `-lsealtinyxml2':
 AC_CHECK_LIB([sealtinyxml2], [main])
+# FIXME: Replace `main' with a function in `-lthrift':
+AC_CHECK_LIB([thrift], [main])
 
 # Checks for header files.
 AC_CHECK_HEADERS([limits.h stddef.h stdlib.h string.h unistd.h])
@@ -63,4 +65,7 @@ AC_CONFIG_FILES([Makefile
                  src/thread/Makefile
                  src/thrift/Makefile
                  src/tinyxml2/Makefile])
+
+AC_CONFIG_SUBDIRS([3rd/gmock
+                   3rd/glog])
 AC_OUTPUT
