@@ -12,6 +12,6 @@ SUBDIRS = src/tinyxml2 \
           src/test \
           src/controller
 
-SUBDIRS+=3rd/gmock 3rd/glog
+SUBDIRS+=3rd/glog
 
 EXTRA_DIST = config

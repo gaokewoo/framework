@@ -758,8 +758,7 @@ CXX
 CXXFLAGS
 CCC
 CXXCPP'
-ac_subdirs_all='3rd/gmock
-                   3rd/glog'
+ac_subdirs_all='3rd/glog'
 
 # Initialize some variables set by options.
 ac_init_help=
@@ -8017,6 +8016,10 @@ _lt_linker_boilerplate=`cat conftest.err`
 $RM -r conftest*
 
 
+## CAVEAT EMPTOR:
+## There is no encapsulation within the following macros, do not change
+## the running order or otherwise move them around unless you know exactly
+## what you are doing...
 if test -n "$compiler"; then
 
 lt_prog_compiler_no_builtin_flag=
@@ -16746,7 +16749,7 @@ ac_config_files="$ac_config_files Makefile src/container/Makefile src/controller
 
 
 
-subdirs="$subdirs 3rd/gmock 3rd/glog"
+subdirs="$subdirs 3rd/glog"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure

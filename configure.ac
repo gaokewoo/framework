@@ -66,6 +66,5 @@ AC_CONFIG_FILES([Makefile
                  src/thrift/Makefile
                  src/tinyxml2/Makefile])
 
-AC_CONFIG_SUBDIRS([3rd/gmock
-                   3rd/glog])
+AC_CONFIG_SUBDIRS([3rd/glog])
 AC_OUTPUT
