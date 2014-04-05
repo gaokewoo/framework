@@ -1,0 +1,5 @@
+AUTOMAKE_OPTIONS=foreign
+
+lib_LTLIBRARIES=libsealcontainer.la
+
+libsealcontainer_la_SOURCES=PluginContainer.cpp  PluginContainer.h
