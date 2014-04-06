@@ -9,6 +9,7 @@
 #include "PluginContainer.h"
 #include "PluginBridge.h"
 #include "RequestQueue.h"
+#include "PluginParser.h"
 
 using namespace std;
 
@@ -28,7 +29,14 @@ void testPlugin()
 
 int main()
 {
-    testPlugin();
+    //testPlugin();
+    PluginParser myPluginParser("../../config/plugin.xml");
+    vector<PluginInfo> v_pluginInfo = myPluginParser.getPluginInfo();
+    vector<PluginInfo>::iterator it;
+    for(it=v_pluginInfo.begin();it!=v_pluginInfo.end();++it)
+    {
+        cout<<it->m_pluginName<<":"<<it->m_soName<<endl;
+    }
 
     return 0;
 }

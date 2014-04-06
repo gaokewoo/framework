@@ -10,9 +10,10 @@ INCLUDES=-I../tinyxml2 \
          -I../test \
          -I${SEAL_HOME}/thrift/include
 
-bin_PROGRAMS=test PluginParser
+bin_PROGRAMS=test
 
-test_SOURCES=test.cpp
+test_SOURCES=test.cpp PluginParser.cpp PluginParser.h
+
 
 test_LDADD=-lthrift \
            -lsealtinyxml2 \
@@ -34,7 +35,3 @@ test_LDFLAGS=-L${SEAL_HOME}/thrift/lib \
              -L$(top_srcdir)/src/container \
              -L$(top_srcdir)/src/test
 
-PluginParser_SOURCES=PluginParser.cpp PluginParser.h
-
-PluginParser_LDADD=-lsealtinyxml2
-PluginParser_LDFLAGS= -L$(top_srcdir)/src/tinyxml2

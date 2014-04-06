@@ -30,17 +30,3 @@ vector<PluginInfo> PluginParser::getPluginInfo()
     return v_pluginInfo;
 }
 
-int main()
-{
-    PluginParser parser("../../config/plugin.xml");
-    //parser.printXML();
-    vector<PluginInfo> v_pluginInfo=parser.getPluginInfo();
-
-    vector<PluginInfo>::iterator it;
-    for(it=v_pluginInfo.begin();it!=v_pluginInfo.end();++it)
-    {
-        cout<<it->m_pluginName<<":"<<it->m_soName<<endl;
-    }
-
-    return 0;
-}
