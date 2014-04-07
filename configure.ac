@@ -39,6 +39,8 @@ AC_CHECK_LIB([sealthrift], [main])
 AC_CHECK_LIB([sealtinyxml2], [main])
 # FIXME: Replace `main' with a function in `-lthrift':
 AC_CHECK_LIB([thrift], [main])
+# FIXME: Replace `main' with a function in `-lglog':
+AC_CHECK_LIB([sealglog], [main])
 
 # Checks for header files.
 AC_CHECK_HEADERS([limits.h stddef.h stdlib.h string.h unistd.h])
@@ -56,6 +58,7 @@ AC_CHECK_TYPES([ptrdiff_t])
 AC_CHECK_FUNCS([memset strchr])
 
 AC_CONFIG_FILES([Makefile
+                 src/glog/Makefile
                  src/container/Makefile
                  src/controller/Makefile
                  src/manager/Makefile
