@@ -8016,6 +8016,10 @@ _lt_linker_boilerplate=`cat conftest.err`
 $RM -r conftest*
 
 
+## CAVEAT EMPTOR:
+## There is no encapsulation within the following macros, do not change
+## the running order or otherwise move them around unless you know exactly
+## what you are doing...
 if test -n "$compiler"; then
 
 lt_prog_compiler_no_builtin_flag=
@@ -16740,7 +16744,7 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile src/container/Makefile src/controller/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile"
+ac_config_files="$ac_config_files Makefile src/container/Makefile src/controller/Makefile src/manager/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile"
 
 
 
@@ -17865,6 +17869,7 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/container/Makefile") CONFIG_FILES="$CONFIG_FILES src/container/Makefile" ;;
     "src/controller/Makefile") CONFIG_FILES="$CONFIG_FILES src/controller/Makefile" ;;
+    "src/manager/Makefile") CONFIG_FILES="$CONFIG_FILES src/manager/Makefile" ;;
     "src/plugin/Makefile") CONFIG_FILES="$CONFIG_FILES src/plugin/Makefile" ;;
     "src/requestqueue/Makefile") CONFIG_FILES="$CONFIG_FILES src/requestqueue/Makefile" ;;
     "src/sharedobject/Makefile") CONFIG_FILES="$CONFIG_FILES src/sharedobject/Makefile" ;;

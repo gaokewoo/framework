@@ -58,6 +58,7 @@ AC_CHECK_FUNCS([memset strchr])
 AC_CONFIG_FILES([Makefile
                  src/container/Makefile
                  src/controller/Makefile
+                 src/manager/Makefile
                  src/plugin/Makefile
                  src/requestqueue/Makefile
                  src/sharedobject/Makefile
