@@ -2,9 +2,9 @@ AUTOMAKE_OPTIONS=foreign
 
 lib_LTLIBRARIES=libsealrequestqueue.la
 
-INCLUDES=-I../thrift \
-         -I../thread \
-         -I${SEAL_HOME}/thrift/include
+INCLUDES=-I${SEAL_HOME}/thrift/include \
+         -I${top_srcdir}/src/thrift \
+         -I${top_srcdir}/src/thread
 
 libsealrequestqueue_la_SOURCES=RequestQueue.cpp  RequestQueue.h
 

@@ -1,14 +1,14 @@
 AUTOMAKE_OPTIONS=foreign
 
-INCLUDES=-I../tinyxml2 \
-         -I../thrift \
-         -I../thread \
-         -I../requestqueue \
-         -I../sharedobject \
-         -I../plugin \
-         -I../container \
-         -I../test \
-         -I${SEAL_HOME}/thrift/include
+INCLUDES=-I${SEAL_HOME}/thrift/include \
+         -I${top_srcdir}/src/tinyxml2 \
+         -I${top_srcdir}/src/thrift \
+         -I${top_srcdir}/src/thread \
+         -I${top_srcdir}/src/requestqueue \
+         -I${top_srcdir}/src/sharedobject \
+         -I${top_srcdir}/src/plugin \
+         -I${top_srcdir}/src/container \
+         -I${top_srcdir}/src/test
 
 bin_PROGRAMS=test
 

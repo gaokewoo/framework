@@ -337,6 +337,21 @@ void ShutdownGoogleLoggingUtilities() {
 #endif
 }
 
+//day of month
+static int32 g_main_mday = 0;  
+bool DayHasChanged(){  
+    time_t rawtime;  
+    struct tm* timeinfo;  
+    time(&rawtime);  
+    timeinfo = localtime(&rawtime);  
+    if(timeinfo->tm_mday != g_main_mday)  
+    {  
+        g_main_mday = timeinfo->tm_mday;  
+        return true;  
+    }  
+    return false;  
+}  
+
 }  // namespace glog_internal_namespace_
 
 _END_GOOGLE_NAMESPACE_

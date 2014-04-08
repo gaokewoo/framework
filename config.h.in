@@ -9,6 +9,9 @@
 /* Define to 1 if you have the `sealcontainer' library (-lsealcontainer). */
 #undef HAVE_LIBSEALCONTAINER
 
+/* Define to 1 if you have the `sealglog' library (-lsealglog). */
+#undef HAVE_LIBSEALGLOG
+
 /* Define to 1 if you have the `sealplugin' library (-lsealplugin). */
 #undef HAVE_LIBSEALPLUGIN
 
