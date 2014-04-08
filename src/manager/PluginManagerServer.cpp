@@ -1,7 +1,9 @@
 #include "PluginManagerServer.h"
+#include "GLog.h"
 
 PluginManagerServer::PluginManagerServer()
 {
+    LOG(INFO) << "In PluginManagerServer contructor" <<endl;
 
 }
 

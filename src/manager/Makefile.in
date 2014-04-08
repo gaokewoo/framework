@@ -217,7 +217,8 @@ INCLUDES = -I${SEAL_HOME}/thrift/include \
          -I${top_srcdir}/src/glog
 
 PluginManagerMain_SOURCES = PluginManagerMain.cpp  PluginManagerServer.cpp  PluginManagerServer.h
-PluginManagerMain_LDADD = -lthrift \
+PluginManagerMain_LDADD = -ldl \
+           -lthrift \
            -lglog \
            -lsealtinyxml2 \
            -lsealthrift \

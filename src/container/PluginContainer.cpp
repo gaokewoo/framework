@@ -1,4 +1,5 @@
 #include "PluginContainer.h"
+#include "GLog.h"
 
 const string PluginContainer::CLASS_LENGTH="%classlength%";
 const string PluginContainer::CLASS_NAME="%classname%";
@@ -7,6 +8,7 @@ const string PluginContainer::DESTROY_PLUGIN_FUNC="_ZN%classlength%%classname%13
 
 PluginContainer::PluginContainer()
 {
+    LOG(INFO) << "In PluginContainer contructor" <<endl;
     mpPlugin = NULL;
     mpSharedObj = new SharedObject("libsealtest.so");
 }

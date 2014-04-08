@@ -16,13 +16,16 @@ class GLog
             return instance;
         }
 
-        enum {INFO=0,WARNING,ERROR,FATAL};
+        enum LOG_LEVEL{INFO=0,WARNING,ERROR,FATAL};
+
+        void setLogFilenameExtension(string extension);
+        void setLogDestination(LOG_LEVEL level,string prefix);
 
     private:
         GLog();
         GLog(const GLog&){}
         GLog & operator = (const GLog&){}
-        google::LogSeverity getMappingLevel(int level);
+        google::LogSeverity getMappingLevel(LOG_LEVEL level);
 
 };
 
