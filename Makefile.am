@@ -10,7 +10,9 @@ SUBDIRS = src/tinyxml2 \
           src/plugin \
           src/container \
           src/test \
-          src/controller
+          src/controller \
+          src/glog \
+          src/manager
 
 SUBDIRS+=3rd/glog
 
