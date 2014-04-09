@@ -17,7 +17,8 @@ bin_PROGRAMS=PluginManagerMain
 PluginManagerMain_SOURCES=PluginManagerMain.cpp  PluginManagerServer.cpp  PluginManagerServer.h
 
 
-PluginManagerMain_LDADD=-lthrift \
+PluginManagerMain_LDADD= \
+           -lthrift \
            -lglog \
            -lsealtinyxml2 \
            -lsealthrift \
@@ -29,7 +30,8 @@ PluginManagerMain_LDADD=-lthrift \
            -lsealtest \
            -lsealglog
 
-PluginManagerMain_LDFLAGS=-L${SEAL_HOME}/thrift/lib \
+PluginManagerMain_LDFLAGS= \
+             -L${SEAL_HOME}/thrift/lib \
              -L${top_srcdir}/3rd/glog/ \
              -L$(top_srcdir)/src/tinyxml2 \
              -L$(top_srcdir)/src/thrift \

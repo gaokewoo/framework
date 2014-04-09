@@ -24,6 +24,9 @@ int main(int args,char* argv[])
 
         delete pluginManagerServer;
         pluginManagerServer=NULL;
+
+        delete pluginContainer;
+        pluginContainer=NULL;
     }
     catch(...)
     {

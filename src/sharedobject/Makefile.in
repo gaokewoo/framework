@@ -76,7 +76,7 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libsealsharedobject_la_LIBADD =
+libsealsharedobject_la_DEPENDENCIES =
 am_libsealsharedobject_la_OBJECTS = SharedObject.lo
 libsealsharedobject_la_OBJECTS = $(am_libsealsharedobject_la_OBJECTS)
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
@@ -228,6 +228,7 @@ top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign
 lib_LTLIBRARIES = libsealsharedobject.la
 libsealsharedobject_la_SOURCES = SharedObject.cpp  SharedObject.h
+libsealsharedobject_la_LIBADD = -ldl
 all: all-am
 
 .SUFFIXES:

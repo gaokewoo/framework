@@ -76,9 +76,12 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-libsealtest_la_LIBADD =
+libsealtest_la_DEPENDENCIES =
 am_libsealtest_la_OBJECTS = PluginHandler.lo
 libsealtest_la_OBJECTS = $(am_libsealtest_la_OBJECTS)
+libsealtest_la_LINK = $(LIBTOOL) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+	$(CXXFLAGS) $(libsealtest_la_LDFLAGS) $(LDFLAGS) -o $@
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
@@ -233,6 +236,8 @@ INCLUDES = -I${SEAL_HOME}/thrift/include \
          -I${top_srcdir}/src/plugin
 
 libsealtest_la_SOURCES = PluginHandler.cpp  PluginHandler.h
+libsealtest_la_LIBADD = -lsealplugin
+libsealtest_la_LDFLAGS = -L$(top_srcdir)/src/plugin
 all: all-am
 
 .SUFFIXES:
@@ -299,7 +304,7 @@ clean-libLTLIBRARIES:
 	  rm -f "$${dir}/so_locations"; \
 	done
 libsealtest.la: $(libsealtest_la_OBJECTS) $(libsealtest_la_DEPENDENCIES) $(EXTRA_libsealtest_la_DEPENDENCIES) 
-	$(CXXLINK) -rpath $(libdir) $(libsealtest_la_OBJECTS) $(libsealtest_la_LIBADD) $(LIBS)
+	$(libsealtest_la_LINK) -rpath $(libdir) $(libsealtest_la_OBJECTS) $(libsealtest_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

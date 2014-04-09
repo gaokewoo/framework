@@ -217,7 +217,7 @@ INCLUDES = -I${SEAL_HOME}/thrift/include \
          -I${top_srcdir}/src/glog
 
 PluginManagerMain_SOURCES = PluginManagerMain.cpp  PluginManagerServer.cpp  PluginManagerServer.h
-PluginManagerMain_LDADD = -ldl \
+PluginManagerMain_LDADD = \
            -lthrift \
            -lglog \
            -lsealtinyxml2 \
@@ -230,7 +230,8 @@ PluginManagerMain_LDADD = -ldl \
            -lsealtest \
            -lsealglog
 
-PluginManagerMain_LDFLAGS = -L${SEAL_HOME}/thrift/lib \
+PluginManagerMain_LDFLAGS = \
+             -L${SEAL_HOME}/thrift/lib \
              -L${top_srcdir}/3rd/glog/ \
              -L$(top_srcdir)/src/tinyxml2 \
              -L$(top_srcdir)/src/thrift \
