@@ -17,4 +17,6 @@ SUBDIRS = src/tinyxml2 \
 
 SUBDIRS+=3rd/glog
 
+SUBDIRS+=src/BasicUnitTest
+
 EXTRA_DIST = config

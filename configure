@@ -16824,7 +16824,7 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile src/glog/Makefile src/exception/Makefile src/container/Makefile src/controller/Makefile src/manager/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile"
+ac_config_files="$ac_config_files Makefile src/glog/Makefile src/exception/Makefile src/container/Makefile src/controller/Makefile src/manager/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile src/BasicUnitTest/Makefile src/BasicUnitTest/exception/Makefile"
 
 
 
@@ -17959,6 +17959,8 @@ do
     "src/thread/Makefile") CONFIG_FILES="$CONFIG_FILES src/thread/Makefile" ;;
     "src/thrift/Makefile") CONFIG_FILES="$CONFIG_FILES src/thrift/Makefile" ;;
     "src/tinyxml2/Makefile") CONFIG_FILES="$CONFIG_FILES src/tinyxml2/Makefile" ;;
+    "src/BasicUnitTest/Makefile") CONFIG_FILES="$CONFIG_FILES src/BasicUnitTest/Makefile" ;;
+    "src/BasicUnitTest/exception/Makefile") CONFIG_FILES="$CONFIG_FILES src/BasicUnitTest/exception/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

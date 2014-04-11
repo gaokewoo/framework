@@ -71,7 +71,10 @@ AC_CONFIG_FILES([Makefile
                  src/test/Makefile
                  src/thread/Makefile
                  src/thrift/Makefile
-                 src/tinyxml2/Makefile])
+                 src/tinyxml2/Makefile
+                 src/BasicUnitTest/Makefile
+                 src/BasicUnitTest/exception/Makefile
+                 ])
 
 AC_CONFIG_SUBDIRS([3rd/glog])
 AC_OUTPUT
