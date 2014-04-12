@@ -10,3 +10,5 @@ export LD_LIBRARY_PATH=$SEAL_HOME/seal/lib:.:$LD_LIBRARY_PATH
 
 export PYTHONPATH=/usr/lib/python2.7/site-packages
 
+export SEAL_CONFIGURATION_HOME=$SEAL_DEV_HOME/config
+export SEAL_LOG_HOME=$SEAL_DEV_HOME/log

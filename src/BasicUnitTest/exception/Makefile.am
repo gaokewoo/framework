@@ -12,7 +12,7 @@ BasicUnitTest_SOURCES=testStandardException.cpp ../main.cpp
 
 BasicUnitTest_LDADD=-lgtest -lgmock -lthrift -lsealstandardexception
 
-BasicUnitTest_LDFLAGS=-L${top_srcdir}/3rd/gmock/gtest/lib/ \ 
+BasicUnitTest_LDFLAGS=-L${top_srcdir}/3rd/gmock/gtest/lib/ \
                       -L${top_srcdir}/3rd/gmock/lib/ \
                       -L${SEAL_HOME}/thrift/lib \
                       -L${top_srcdir}/src/exception
