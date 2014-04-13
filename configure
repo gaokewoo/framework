@@ -16864,7 +16864,7 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile src/utility/Makefile src/glog/Makefile src/exception/Makefile src/container/Makefile src/controller/Makefile src/manager/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile src/BasicUnitTest/Makefile src/BasicUnitTest/exception/Makefile"
+ac_config_files="$ac_config_files Makefile src/utility/Makefile src/glog/Makefile src/exception/Makefile src/container/Makefile src/controller/Makefile src/manager/Makefile src/plugin/Makefile src/requestqueue/Makefile src/sharedobject/Makefile src/test/Makefile src/thread/Makefile src/thrift/Makefile src/tinyxml2/Makefile src/BasicUnitTest/Makefile src/BasicUnitTest/exception/Makefile src/BasicUnitTest/utility/Makefile"
 
 
 
@@ -18002,6 +18002,7 @@ do
     "src/tinyxml2/Makefile") CONFIG_FILES="$CONFIG_FILES src/tinyxml2/Makefile" ;;
     "src/BasicUnitTest/Makefile") CONFIG_FILES="$CONFIG_FILES src/BasicUnitTest/Makefile" ;;
     "src/BasicUnitTest/exception/Makefile") CONFIG_FILES="$CONFIG_FILES src/BasicUnitTest/exception/Makefile" ;;
+    "src/BasicUnitTest/utility/Makefile") CONFIG_FILES="$CONFIG_FILES src/BasicUnitTest/utility/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac
