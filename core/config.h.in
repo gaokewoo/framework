@@ -23,6 +23,10 @@
    (-lsealsharedobject). */
 #undef HAVE_LIBSEALSHAREDOBJECT
 
+/* Define to 1 if you have the `sealstandardexception' library
+   (-lsealstandardexception). */
+#undef HAVE_LIBSEALSTANDARDEXCEPTION
+
 /* Define to 1 if you have the `sealtest' library (-lsealtest). */
 #undef HAVE_LIBSEALTEST
 
@@ -34,6 +38,9 @@
 
 /* Define to 1 if you have the `sealtinyxml2' library (-lsealtinyxml2). */
 #undef HAVE_LIBSEALTINYXML2
+
+/* Define to 1 if you have the `sealutility' library (-lsealutility). */
+#undef HAVE_LIBSEALUTILITY
 
 /* Define to 1 if you have the `thrift' library (-lthrift). */
 #undef HAVE_LIBTHRIFT

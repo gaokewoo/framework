@@ -2,10 +2,10 @@ AUTOMAKE_OPTIONS=foreign
 
 lib_LTLIBRARIES=libsealglog.la
 
-INCLUDES=-I${top_srcdir}/3rd/glog/src
+INCLUDES=-I../${top_srcdir}/glog/src
 
 libsealglog_la_SOURCES=GLog.cpp  GLog.h
 
 libsealglog_la_LIBADD=-lglog
 
-libsealglog_la_LDFLAGS=-L${top_srcdir}/3rd/glog/
+libsealglog_la_LDFLAGS=-L../${top_srcdir}/glog/

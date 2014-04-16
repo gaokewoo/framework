@@ -1,7 +1,7 @@
 AUTOMAKE_OPTIONS=foreign
 
 INCLUDES=-I${SEAL_HOME}/thrift/include \
-         -I${top_srcdir}/3rd/glog/src \
+         -I../${top_srcdir}/glog/src \
          -I${top_srcdir}/src/tinyxml2 \
          -I${top_srcdir}/src/thrift \
          -I${top_srcdir}/src/thread \
@@ -32,7 +32,7 @@ PluginManagerMain_LDADD= \
 
 PluginManagerMain_LDFLAGS= \
              -L${SEAL_HOME}/thrift/lib \
-             -L${top_srcdir}/3rd/glog/ \
+             -L../${top_srcdir}/glog/ \
              -L$(top_srcdir)/src/tinyxml2 \
              -L$(top_srcdir)/src/thrift \
              -L$(top_srcdir)/src/thread \
